@@ -1,10 +1,3 @@
-/* Name: main.c  ver 1.0
- * Content: °ÔÀÓ main ÇÔ¼ö.
- * Implementation: YSW
- * 
- * Last modified 2008/01/01
- */
-
 #include "common.h"
 #include "game.h"
 #include "gameTimes.h"
@@ -21,7 +14,7 @@ int main(void)
 
 	if (TheFileExist() == 1 && MoneyIsZero() != 1)
 	{
-		fputs("°ÔÀÓÀ» ÀÌ¾î¼­ ÇÏ½Ã°Ú½À´Ï±î?	 (Yes.1	No.2): ", stdout);
+		fputs("ê²Œì„ì„ ì´ì–´ì„œ í•˜ì‹œê² ìŠµë‹ˆê¹Œ?	 (Yes.1	No.2): ", stdout);
 		scanf("%d", &choice);
 
 		if (choice == 1)
@@ -30,7 +23,7 @@ int main(void)
 		}
 		else
 		{
-			fputs("´ç½ÅÀÇ ¸Ó´Ï: ", stdout);
+			fputs("ë‹¹ì‹ ì˜ ë¨¸ë‹ˆ: ", stdout);
 			scanf("%d", &youMoney);
 
 			setComMoney(1000);
@@ -39,28 +32,28 @@ int main(void)
 	}
 	else
 	{
-		fputs("´ç½ÅÀÇ ¸Ó´Ï: ", stdout);
+		fputs("ë‹¹ì‹ ì˜ ë¨¸ë‹ˆ: ", stdout);
 		scanf("%d", &youMoney);
 
 		setComMoney(1000);
 		setYouMoney(youMoney);
 	}
 
-	puts("ÀÚ! °ÔÀÓÀ» ½ÃÀÛÇÕ´Ï´Ù.");
+	puts("ì! ê²Œì„ì„ ì‹œì‘í•©ë‹ˆë‹¤.");
     puts("");
     
 	while (1)
 	{
 		betting();
 
-		puts("¡Ù¡Ù¡Ù¡Ù¡Ù¡Ù ´ë°á! ¡Ù¡Ù¡Ù¡Ù¡Ù¡Ù!!");
+		puts("â˜†â˜†â˜†â˜†â˜†â˜† ëŒ€ê²°! â˜†â˜†â˜†â˜†â˜†â˜†!!");
 		com = ChoiceOfCom();
 		you = ChoiceOfMe();
 		puts("");
 
 		if (you == 4)
 		{	
-			fputs("°ÔÀÓÀ» ÀúÀåÇÏ½Ã°Ú½À´Ï±î? (Yes.1	No.2): ", stdout);
+			fputs("ê²Œì„ì„ ì €ì¥í•˜ì‹œê² ìŠµë‹ˆê¹Œ? (Yes.1	No.2): ", stdout);
 			scanf("%d", &choice);
 
 			if(choice == 1)
@@ -70,18 +63,18 @@ int main(void)
 
 		}
 
-		puts("¡Ú¡Ú¡Ú¡Ú¡Ú¡Ú °á°ú! ¡Ú¡Ú¡Ú¡Ú¡Ú¡Ú!!");
+		puts("â˜…â˜…â˜…â˜…â˜…â˜… ê²°ê³¼! â˜…â˜…â˜…â˜…â˜…â˜…!!");
 
-		fputs("ÄÄÇ»ÅÍÀÇ ¼±ÅÃÀº ", stdout);
+		fputs("ì»´í“¨í„°ì˜ ì„ íƒì€ ", stdout);
 		ShowRSP(com);
 
-		fputs("´ç½ÅÀÇ ¼±ÅÃÀº ", stdout);
+		fputs("ë‹¹ì‹ ì˜ ì„ íƒì€ ", stdout);
 		ShowRSP(you);
 		
 		WhoIsWinner(com, you);
 		Odds = ShowOdds();
 
-		printf("½Â·ü: %f%% \n", Odds);
+		printf("ìŠ¹ë¥ : %f%% \n", Odds);
 		ShowCurMoney();
 
 		if (WhoIsZero() == 1)
